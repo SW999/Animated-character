@@ -16,10 +16,8 @@
     destination_x = hW, // Start position
     destination_y = hH;
 
-  audio.addEventListener('canplay', function () {
-    audio.play();
     audio.volume = 0.1;
-  });
+
 
   function setTranslate(el, x, y) {
     el.style.transform = 'translate3d(' + x + 'px, ' + y + 'px, 0)';
