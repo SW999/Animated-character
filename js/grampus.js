@@ -1,5 +1,6 @@
 (function () {
   var myImages,
+    start = document.getElementById('start'),
     clouds = document.getElementById('clouds'),
     audio = document.getElementById('audio'),
     wrapper = document.getElementById('wrapper'),
@@ -15,8 +16,6 @@
     flag = false,
     destination_x = hW, // Start position
     destination_y = hH;
-
-    audio.volume = 0.1;
 
 
   function setTranslate(el, x, y) {
@@ -158,8 +157,13 @@
       clouds.parentNode.removeChild(clouds);
       doStep();
       document.addEventListener('mousemove', animateCharacter, false);
-    }, 14000);
+    }, 13000);
   }
 
-  loadImage(wrapper, 43, init);
+  start.addEventListener('click', function() {
+    audio.volume = 0.1;
+    audio.play();
+    loadImage(wrapper, 43, init);
+    start.parentNode.removeChild(start);
+  });
 })();
